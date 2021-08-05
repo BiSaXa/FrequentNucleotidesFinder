@@ -1,6 +1,7 @@
 /**
  * Program that generates random genomes of desired length and
- * finds the most frequent nucleotides in them
+ * finds the most frequent (overlapped) nucleotides in them
+ *
  * @author Arda Serdar Pektezol
  * @since 05/08/2021
  */
@@ -26,7 +27,7 @@ public class Main {
      * @param lengthOfNucleotide How long the genome is
      * @return HashMap dictionary of the most frequent nucleotides with the same value over the entire genome list
      */
-    private static HashMap<String, HashMap<String, Integer>> frequentNucleotidesInGenomes (List<String> genomesList, int lengthOfNucleotide) {
+    private static HashMap<String, HashMap<String, Integer>> frequentNucleotidesInGenomes(List<String> genomesList, int lengthOfNucleotide) {
         HashMap<String, HashMap<String, Integer>> dictionary = new HashMap<>();
         for (String genome : genomesList) {
             dictionary.put(genome, frequentNucleotides(genome, lengthOfNucleotide));
@@ -41,7 +42,7 @@ public class Main {
      * @param lengthOfNucleotide How long the genome is
      * @return HashMap dictionary of the most frequent nucleotides with the same value
      */
-    private static HashMap<String, Integer> frequentNucleotides (String genome, int lengthOfNucleotide) {
+    private static HashMap<String, Integer> frequentNucleotides(String genome, int lengthOfNucleotide) {
         HashMap<String, Integer> dictionary = prevalenceDictionary(genome, lengthOfNucleotide);
         int maxValue = 0;
         for (HashMap.Entry<String, Integer> pair : dictionary.entrySet()) {
