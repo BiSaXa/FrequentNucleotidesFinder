@@ -22,7 +22,7 @@ public class Main {
     }
 
     /**
-     *
+     * Iterates over eaach genome in genomesList and finds the most frequent (overlapped) nucleotides
      * @param genomesList List of string with genomes
      * @param lengthOfNucleotide How long the genome is
      * @return HashMap dictionary of the most frequent nucleotides with the same value over the entire genome list
